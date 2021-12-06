@@ -147,7 +147,7 @@ for epoch in range(5):
 
   # Keep track of the development accuracy and reduce the learning rate if it got worse
   if last_dev < dev_loss:
-    optimizer.learning_rate /= 2
+    optimizer.param_groups[0]['lr'] /= 2
   last_dev = dev_loss
   
   # Keep track of the best development accuracy, and save the model only if it's the best one
